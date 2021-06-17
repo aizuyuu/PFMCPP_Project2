@@ -14,14 +14,14 @@ video: Chapter 2 - Part 3
  This will be the first project where the code you write will be compiled and you will be responsible for making sure it compiles before submitting it for review.
  
  
- 1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
- 
- 
- 
- 
- 
- 
- 
+ 1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here:
+
+ int
+ float
+ char
+ bool
+ double
+ void
  
  
  
@@ -60,10 +60,23 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int pillsLeft = 4;
+    int fingerCount = 10;
+    int candy= 3;
+    float timeElapsed = 3.8f;
+    float temperatureNow = 25.3f;
+    float velocity = 86.5f;
+    char answer = 'C';
+    char modelType = 'a';
+    char size = 'b';
+    bool hasMoney = false;
+    bool isHealthy = true;
+    bool canEat = false;
+    double threshold = 3.14e2;
+    double tolerance = 0.03;
+    double roadLength = 94.004;
     
-
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, pillsLeft, fingerCount, candy, timeElapsed, temperatureNow, velocity, answer, modelType, size, hasMoney, isHealthy, canEat, threshold, tolerance, roadLength); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -80,42 +93,90 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+bool hasMoney(double income, double outcome)
+{
+    ignoreUnused(income, outcome);
+    return {};
+}
 
 /*
  2)
  */
+int apple(int momBuys = 12, int dadBuys = 46)
+{
+    ignoreUnused(momBuys, dadBuys);
+    return {};
+}
 
 /*
  3)
  */
+double fenceLength(double onFront, double onLeft = 13.9, double onRight = 12.07)
+{
+    ignoreUnused(onFront, onLeft, onRight);
+    return {};
+}
 
 /*
  4)
  */
+bool getJob(int yearsExp, int skillCount)
+{
+    ignoreUnused(yearsExp, skillCount);
+    return {};
+}
 
 /*
  5)
  */
+double score(int problem = 40, int correct = 0, int wrong = 0)
+{
+    ignoreUnused(problem, correct, wrong);
+    return {};
+}
 
 /*
  6)
  */
+char results(double testScore = 0, bool isQualified = false)
+{
+    ignoreUnused(testScore, isQualified);
+    return {};
+}
 
 /*
  7)
  */
+void washDishes(int plate, int cup, int spoon)
+{
+    ignoreUnused(plate, cup, spoon);
+}
 
 /*
  8)
  */
+double cubeVolume(int sideLength)
+{
+    ignoreUnused(sideLength);
+    return {};
+}
 
 /*
  9)
  */
+void driveCar(int carType, int passenger = 3, bool bigLuggage = false)
+{
+    ignoreUnused(carType, passenger, bigLuggage);
+}
 
 /*
  10)
  */
+int weekCount(int daysToGo)
+{
+    ignoreUnused(daysToGo);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -137,27 +198,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto buy = hasMoney(250.99, 87.99);
     //2)
-    
+    auto appleCount = apple(3, 9);
     //3)
-    
+    auto fence = fenceLength(5.6, 8.7);
     //4)
-    
+    auto status = getJob(3, 6);
     //5)
-    
+    auto test = score(40, 35, 5);
     //6)
-    
+    auto decision = results(86, true);
     //7)
-    
+    washDishes(4, 7, 6);
     //8)
-    
+    auto cubeVol = cubeVolume(13);
     //9)
-    
+    driveCar(4, 6, false);
     //10)
+    auto howManyWeeks = weekCount(78);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, buy, appleCount, fence, status, test, decision, cubeVol, howManyWeeks);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
